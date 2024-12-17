@@ -6,7 +6,7 @@ from ..auth import new_user
 class TestNewUser(unittest.TestCase):
     @patch('builtins.input')
     def test_valid_names(self, mock_input):
-        # This simulates user typing "John" then "Doe"
+        # This simulates user typing "John" then "Doe" , still need to test the limits
         mock_input.side_effect = ["John", "Doe"]
         
         # Run the function
