@@ -134,6 +134,30 @@ class User:
             except Exception as e:
                 print(f"An error occurred: {e}")
                 return False
+            
+    '''this is for the three security quesions for account retrival'''
+    def security_questions(self):
+        """
+        Collect and store answers to three security questions.
+        """
+        try:
+            questions = [
+                "What is your mother's maiden name?",
+                "What is the name of your first pet?",
+                "What was the name of your elementary school?"
+            ]
+            for question in questions:
+                answer = input(f"{question} ")
+                if len(answer.strip()) == 0:
+                    print("Must enter valid answer.")
+                    return False
+                self.security_answers.append(answer)
+            print("Security questions setup is now complete please save in secure place complete!")
+            return True
+
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return False
 
     def create_account(self):
         """
